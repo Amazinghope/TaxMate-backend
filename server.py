@@ -25,6 +25,11 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 app = FastAPI(title="TaxSense MVP Backend")
 print("TaxMate backend booted successfully")
 
+@app.get("/")
+def root():
+    return {"message": "TaxSense Backend is running!"}
+
+
 #cors config
 app.add_middleware(
     CORSMiddleware,
