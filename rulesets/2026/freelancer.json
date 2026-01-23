@@ -1,0 +1,29 @@
+{
+  "persona": "freelancer",
+  "description": "Individual who earns income from multiple clients without being on payroll.",
+  "tax_free_threshold": 800000,
+  "pays_self": true,
+  "payment_model": "self_assessment",
+  "taxes_apply": ["personal_income_tax"],
+  "taxes_not_apply": ["company_income_tax", "development_levy"],
+  "what_changed_2026": [
+    "Clearer self-assessment process",
+    "Simplified registration",
+    "Recognition of withholding tax credits"
+  ],
+  "common_mistakes": [
+    "Not registering for tax ID",
+    "Thinking clients will pay tax for you",
+    "Not keeping income records"
+  ],
+  "next_steps": [
+    "Register for tax ID",
+    "Keep records of income",
+    "Declare income annually"
+  ],
+  "out_of_scope": [
+    "Tax calculations",
+    "Filing on behalf of user",
+    "Document uploads"
+  ]
+}

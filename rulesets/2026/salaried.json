@@ -1,0 +1,27 @@
+{
+  "persona": "salaried",
+  "description": "Employees who receive regular wages from a company or employer.",
+  "tax_free_threshold": 800000,
+  "pays_self": false,
+  "payment_model": "PAYE",
+  "taxes_apply": ["personal_income_tax"],
+  "taxes_not_apply": ["company_income_tax", "development_levy"],
+  "what_changed_2026": [
+    "Higher tax-free threshold",
+    "Unified tax filing year"
+  ],
+  "common_mistakes": [
+    "Assuming you must file tax yourself",
+    "Not checking that PAYE deductions are correct"
+  ],
+  "next_steps": [
+    "Check your payslip regularly",
+    "Confirm tax deductions with employer",
+    "Maintain basic income records"
+  ],
+  "out_of_scope": [
+    "Calculating tax",
+    "Filing on behalf of user",
+    "Document uploads"
+  ]
+}

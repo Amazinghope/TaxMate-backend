@@ -1,0 +1,28 @@
+{
+  "persona": "first_timer",
+  "description": "New taxpayers entering the system for the first time (new job, new business, or first-time self-employed).",
+  "tax_free_threshold": 800000,
+  "pays_self": true,
+  "payment_model": "self-assessment",
+  "taxes_apply": ["personal-income-tax", "company-income-tax if applicable"],
+  "taxes_not_apply": [],
+  "what_changed_2026": [
+    "Thresholds and registration simplified",
+    "Clear guidance for first-time taxpayers"
+  ],
+  "common_mistakes": [
+    "Not registering for a tax ID early",
+    "Assuming old tax rules still apply",
+    "Not tracking income properly"
+  ],
+  "next_steps": [
+    "Register for tax ID",
+    "Keep accurate income records",
+    "Understand which taxes apply to you"
+  ],
+  "out_of_scope": [
+    "Calculations",
+    "Filing",
+    "Document uploads"
+  ]
+}

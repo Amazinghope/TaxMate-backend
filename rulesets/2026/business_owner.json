@@ -1,0 +1,28 @@
+{
+  "persona": "business_owner",
+  "description": "Person who owns and operates a business, selling products or services.",
+  "tax_free_threshold": 0,
+  "pays_self": true,
+  "payment_model": "company-tax",
+  "taxes_apply": ["company-income-tax", "development_levy", "VAT"],
+  "taxes_not_apply": ["personal-income-tax on owner's salary unless salaried separately"],
+  "what_changed_2026": [
+    "Small businesses may be exempt from company tax under thresholds",
+    "Unified development levy replaces multiple levies"
+  ],
+  "common_mistakes": [
+    "Not registering business with NRS",
+    "Confusing personal and business taxes",
+    "Ignoring VAT obligations"
+  ],
+  "next_steps": [
+    "Register business for tax ID",
+    "Keep accurate sales and expense records",
+    "File annual tax returns"
+  ],
+  "out_of_scope": [
+    "Filing on behalf of user",
+    "Calculating tax",
+    "Document uploads"
+  ]
+}
