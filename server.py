@@ -11,11 +11,22 @@ from dotenv import load_dotenv
 import openai
 from prompt.prompts_builder import build_prompt
 from prompt.guardrails import validate_message
-# from prompt.mock_engine import generate_mock_reply
 from prompt.mock_engine import generate_mock_reply
-# from core.constants import VALID_MODES, VALID_PERSONAS
 from core.constants import VALID_MODES, VALID_PERSONAS
 import time
+import json 
+from pathlib import Path
+
+# Path to popular_topics.json file
+TOPICS_PATH = Path("rulesets/popular_topics.json")
+
+def get_popular_topics():
+    """Load popular topics from JSON and return as a list"""
+    if not TOPICS_PATH.exists():
+        return []
+    data = json.loads(TOPICS_PATH.read_text())
+    return data.get("topics", [])
+
 
 # - OPENAI API KEY SETUP 
 load_dotenv()
@@ -73,6 +84,11 @@ class ChatRequest(BaseModel):
     message: str
 
     # API Endpoints
+@app.get("/topics")
+def popular_topics():
+    """Return popular topics so frontend can display them"""
+    return {"topics": get_popular_topics()}
+
     
 @app.post("/session/start")
 
@@ -106,31 +122,6 @@ def start_session(req: SessionStartRequest):
         "mode": mode,
     }
 
-# @app.post("/session/start")
-# def start_session(req: SessionStartRequest):
-#     session_id = str(uuid.uuid4())
-
-#     # Validate mode
-#     valid_modes = ["standard", "eli5", "pidgin", "hybrid"]
-#     if req.mode.lower() not in valid_modes:
-#         return {"error": f"Invalid mode. Choose one of {valid_modes}"}
-
-
-#     SESSIONS[session_id] = {
-#        "persona": req.persona.lower(),
-#         "mode": req.mode.lower()
-
-#     }
-#     return {"session_id": session_id, "persona": req.persona, "mode": req.mode}
-
-# @app.post("/session/update")
-# def update_session(req: SessionUpdateRequest):
-#     session = SESSIONS.get(req.session_id)
-#     if not session: raise HTTPException(status_code=404, detail="Session not found")
-    
-#     if req.persona: session["persona"] = req.persona
-#     if req.mode: session["mode"] = req.mode
-#     return {"status": "ok"}
 
 
 @app.post("/session/update")
